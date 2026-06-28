@@ -47,3 +47,24 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# --- 数据分析项目专属忽略项（强烈建议） ---
+
+# 1. 忽略原始数据文件（防止把几个G的CSV传上GitHub）
+# 如果你把数据放在 data/raw 目录下，取消下面两行的注释：
+data/raw/*.csv
+data/raw/*.xlsx
+
+# 2. 忽略处理过程中的临时大文件
+*.rds  # 如果不用 readRDS 保存大对象，可以忽略
+*.qs   # 如果不用 qs 包，可以忽略
+
+# 3. 忽略输出结果（图表和报告通常不传，或者只传最终版）
+# output/*.png
+# output/*.html
+# reports/*.pdf
+
+# 4. 忽略敏感信息（极其重要！）
+.env
+secrets.R
+*.key

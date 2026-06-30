@@ -248,7 +248,7 @@ result %>% select(x, x_parsed, `x@strict_is_na`, y, y_parsed, `y@strict_is_na`)
 | `"1.2mm"`       | 1.2            | TRUE         | parse_number 抽出了数，但原始字符包含单位，需人工确认 |
 | `"大于1.2"`     | 1.2            | TRUE         | 包含中文修饰，parse_number 仍能抽数，但需确认语义     |
 | `"NA"` (字符)   | NA             | TRUE         | 字符串 "NA"，非真正缺失值，应补全上下文处理           |
-| `NA` (真正缺失) | NA             | NA           | 真正的缺失值，保持为 NA                               |
+| `NA` (真正缺失) | NA             | NA           | 真正的缺失值，TRUE                               |
 | `""` (空字符串) | NA             | TRUE         | 空值，看业务是否应作为 0 或保留 NA                    |
 
 ### 筛查可疑数据
